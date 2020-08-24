@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aws.person.SpringDemo.model.bet;
-import com.aws.person.SpringDemo.services.betServices;
+import com.aws.person.SpringDemo.services.BetServices;
 import com.aws.person.SpringDemo.services.serviceExecption;
 
 @RestController
 @RequestMapping("/bets")
-public class betController {
+public class BetController {
 
     @Autowired
-    betServices betservice;
+    BetServices betservice;
     @PatchMapping("/{rulet}/open")
 	public ResponseEntity<String> openBet(@PathVariable String rulet) {
 		try {

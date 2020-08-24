@@ -7,22 +7,22 @@ import com.aws.person.SpringDemo.model.bet;
 import com.aws.person.SpringDemo.model.game;
 import com.aws.person.SpringDemo.model.results;
 import com.aws.person.SpringDemo.model.roulette;
-import com.aws.person.SpringDemo.services.betServices;
-import com.aws.person.SpringDemo.services.gameService;
+import com.aws.person.SpringDemo.services.BetServices;
+import com.aws.person.SpringDemo.services.GameService;
 import com.aws.person.SpringDemo.services.serviceExecption;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import repository.rouletteRepository;
+import repository.RouletteRepository;
 
 @Service
-public class betServiceImpl implements betServices {
+public class BetServiceImpl implements BetServices {
     private static final String NOTFOUND = "Roulette not found";
     @Autowired
-    rouletteRepository rouletteRepository;
-    @Autowired
-    gameService gameService;
+    RouletteRepository rouletteRepository;
+    @Autowired  
+    GameService gameService;
 
     @Override
     public void openBet(String betId) throws serviceExecption {
@@ -37,10 +37,8 @@ public class betServiceImpl implements betServices {
             } else {
                 throw new serviceExecption("La ruleta " + betId + " ya se encuentra abierta");
             }
-        } else {
-            throw new serviceExecption(NOTFOUND);
+        } else {            throw new serviceExecption(NOTFOUND);
         }
-
     }
 
     @Override

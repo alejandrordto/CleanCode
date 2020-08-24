@@ -3,11 +3,11 @@ package com.aws.person.SpringDemo.services.impl;
 import com.aws.person.SpringDemo.model.bet;
 import com.aws.person.SpringDemo.model.game;
 import com.aws.person.SpringDemo.model.results;
-import com.aws.person.SpringDemo.services.gameService;
+import com.aws.person.SpringDemo.services.GameService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class gameServiceImpl implements gameService {
+public class GameServiceImpl implements GameService {
 
     @Override
     public int spinRoullete() {

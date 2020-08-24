@@ -8,13 +8,13 @@ import com.aws.person.SpringDemo.services.ruleteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import repository.rouletteRepository;
+import repository.RouletteRepository;
 
 @Service
 public class ruleteServiceImpl implements ruleteService {
 
     @Autowired
-    rouletteRepository ruletRepository;
+    RouletteRepository ruletRepository;
 
     @Override
     public long createRoulette() {
